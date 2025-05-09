@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ClimaHoy</title>
+  <link rel="stylesheet" href="index.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <i class="fas fa-cloud"></i>
+      <span>ClimaHoy</span>
+    </div>
+    <nav>
+      <a href="#" class="active">Pronóstico</a>
+      <a href="#">Mapa</a>
+      <a href="#">Historial</a>
+      <a href="#">Alertas</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="weather-main">
+      <div class="weather-header">
+        <div>
+          <h2>Clima Actual</h2>
+          <p class="city-country" id="cityCountry">Cargando...</p>
+        </div>
+        <div class="updated">
+          <span id="lastUpdate">Actualizado hace unos segundos</span>
+          <a href="#" id="refreshBtn" title="Actualizar"><i class="fas fa-sync-alt"></i></a>
+        </div>
+      </div>
+      <div class="weather-center">
+        <span class="main-temp" id="mainTemp">--°C</span>
+        <span class="main-icon" id="mainIcon">❔</span>
+      </div>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <i class="fas fa-thermometer-half"></i>
+          <div>
+            <span id="feelsLike">--°C</span>
+            <small>Sensación Térmica</small>
+          </div>
+        </div>
+        <div class="metric-card">
+          <i class="fas fa-tint"></i>
+          <div>
+            <span id="humidity">--%</span>
+            <small>Humedad</small>
+          </div>
+        </div>
+        <div class="metric-card">
+          <i class="fas fa-wind"></i>
+          <div>
+            <span id="wind">-- km/h</span>
+            <small>Viento</small>
+          </div>
+        </div>
+        <div class="metric-card">
+          <i class="fas fa-tachometer-alt"></i>
+          <div>
+            <span id="pressure">-- hPa</span>
+            <small>Presión</small>
+          </div>
+        </div>
+        <div class="metric-card">
+          <i class="fas fa-eye"></i>
+          <div>
+            <span id="visibility">-- km</span>
+            <small>Visibilidad</small>
+          </div>
+        </div>
+      </div>
+    </section>
+    <aside>
+      <div class="search-box">
+        <h3>Buscar Ubicación</h3>
+        <div class="search-input">
+          <input
+            type="text"
+            id="cityInput"
+            placeholder="Ingrese ciudad o código postal"
+            autocomplete="off"
+          />
+          <button id="searchBtn" title="Buscar">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+      <div class="saved-locations">
+        <h3>Ubicaciones Guardadas</h3>
+        <ul id="savedLocationsList">
+          <!-- Se llenará dinámicamente -->
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
+
